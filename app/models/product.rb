@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   validates :title, :description, :image_url, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, length: { minimum: 10 }
   validates :image_url, allow_blank: true, format: {
     with:     %r{\.(gif|jpg|png)\z}i,
     message: 'Must be a GIF, PNG or JPG'
