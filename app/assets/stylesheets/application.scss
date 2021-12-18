@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header.main {
+  text-align: center;
+  @media (min-width: 30em) {
+   text-align: left;
+  }
+  background: #282;
+  margin: 0;
+  h1 {
+    display: none;
+  }
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  @media (min-width: 30em) {
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+  }
+  nav {
+    padding-bottom: 1em;
+    background: #141;
+    text-align: center;
+    @media (min-width: 30em) {
+      text-align: left;
+      padding: 1em;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      @media (min-width: 30em) {
+        padding-right: 1em;
+      }
+      li {
+        margin: 0;
+        padding: 0.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.354em;
+        a {
+          text-decoration: none;
+          color: #bfb;
+        }
+        a:hover {
+          color: white;
+          background: none;
+        }
+      }
+    }
+  }
+  main {
+    padding: 0.5em;
+  }
+}
