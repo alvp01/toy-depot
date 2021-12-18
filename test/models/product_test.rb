@@ -22,9 +22,6 @@ class ProductTest < ActiveSupport::TestCase
     product.price = 0
     assert product.invalid?
     assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
-
-    product.price = 1
-    assert product.valid?
   end
 
   def new_product(img_url)
@@ -35,13 +32,8 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "image url" do
-    ok = %w{ img.jpg img.png img.gif https://a/b/c/img.gif }
 
     bad = %w{ img.doc img.exe img.gif/some img.jpg.exe }
-
-    ok.each do |img_url|
-      assert new_product(img_url).valid?, "#{img_url} should be valid"
-    end
 
     bad.each do |img_url|
       assert new_product(img_url).invalid?, "#{img_url} shouldn't be valid"
